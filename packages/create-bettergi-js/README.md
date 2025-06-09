@@ -5,5 +5,5 @@
 ## 使用
 
 ```bash
-npx create bettergi-js
+npm create bettergi-js
 ```
