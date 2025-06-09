@@ -112,5 +112,19 @@
     "scss",
     "pcss",
     "postcss"
+  ],
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/examples/**/settings.json"
+      ],
+      "url": "/schema/settings.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/examples/**/manifest.json"
+      ],
+      "url": "/schema/manifest.schema.json"
+    }
   ]
 }

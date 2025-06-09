@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "settingItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "配置名"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "input-text",
+            "select",
+            "checkbox"
+          ],
+          "description": "配置类型"
+        },
+        "label": {
+          "type": "string",
+          "description": "配置描述"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "可选值"
+        },
+        "default": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "description": "默认值"
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "label"
+      ]
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/settingItem"
+  }
+}

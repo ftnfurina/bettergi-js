@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "作者名称"
+        },
+        "link": {
+          "type": "string",
+          "description": "作者链接"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "manifest_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "描述清单版本号，暂时固定为：1"
+    },
+    "name": {
+      "type": "string",
+      "description": "脚本名称"
+    },
+    "version": {
+      "type": "string",
+      "description": "脚本版本号"
+    },
+    "bgi_version": {
+      "type": "string",
+      "description": "BetterGI 约束版本号"
+    },
+    "description": {
+      "type": "string",
+      "description": "脚本描述"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/author"
+      },
+      "description": "作者列表",
+      "default": []
+    },
+    "main": {
+      "type": "string",
+      "description": "脚本入口文件路径"
+    },
+    "settings_ui": {
+      "type": "string",
+      "description": "配置文件路径",
+      "default": "settings.json"
+    },
+    "scripts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "脚本文件列表",
+      "default": []
+    },
+    "library": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "脚本库文件路径",
+      "default": []
+    }
+  },
+  "required": [
+    "name",
+    "version",
+    "main"
+  ]
+}
