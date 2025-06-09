@@ -1,0 +1,13 @@
+{
+  "name": "template",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "bettergi-js-types": "^0.1.1",
+    "tsup": "^8.5.0"
+  }
+}

@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "pnpm --filter=./packages/** build",
+    "build": "pnpm --filter=./packages/* build",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "changeset": "changeset",

@@ -1,0 +1,43 @@
+{
+  "name": "create-bettergi-js",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "一个可以创建 Better GI JS 项目脚手架的工具。",
+  "author": {
+    "name": "ftnfurina",
+    "github": "https://github.com/ftnfurina"
+  },
+  "license": "MIT",
+  "keywords": [
+    "bettergi-js",
+    "bettergi",
+    "js",
+    "create"
+  ],
+  "bin": {
+    "create-bettergi-js": "index.mjs"
+  },
+  "files": [
+    "dist",
+    "index.mjs",
+    "template"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "fs-extra": "^11.3.0",
+    "prompts": "^2.4.2",
+    "which-pm-runs": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.15.30",
+    "@types/prompts": "^2.4.9",
+    "@types/which-pm-runs": "^1.0.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ES6"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["bettergi-js-types"],
+    "noEmit": true,
+    "skipLibCheck": true
+  }
+}

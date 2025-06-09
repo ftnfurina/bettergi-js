@@ -1,0 +1,16 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/public/**/settings.json"
+      ],
+      "url": "https://raw.githubusercontent.com/ftnfurina/bettergi-js/refs/heads/main/schema/settings.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/public/**/manifest.json"
+      ],
+      "url": "https://raw.githubusercontent.com/ftnfurina/bettergi-js/refs/heads/main/schema/manifest.schema.json"
+    }
+  ]
+}

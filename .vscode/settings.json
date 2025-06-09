@@ -116,13 +116,16 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "/examples/**/settings.json"
+        "/examples/**/settings.json",
+        "/packages/**/settings.json",
+        "!/**/.vscode/**/settings.json"
       ],
       "url": "/schema/settings.schema.json"
     },
     {
       "fileMatch": [
-        "/examples/**/manifest.json"
+        "/examples/**/manifest.json",
+        "/packages/**/manifest.json"
       ],
       "url": "/schema/manifest.schema.json"
     }
