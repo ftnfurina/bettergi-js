@@ -1,5 +1,11 @@
 # bettergi-js-types
 
+## 0.1.0
+
+### Minor Changes
+
+- [`2225659`](https://github.com/ftnfurina/bettergi-js/commit/2225659e214a41b98b98bd8d19a6f12b6c2a5251) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Add RealtimeTimer name type
+
 ## 0.0.2
 
 ### Patch Changes
