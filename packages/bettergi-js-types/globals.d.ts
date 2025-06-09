@@ -37,6 +37,9 @@ declare global {
     use3Channels?: boolean
     Use3Channels?: boolean
 
+    static ocrThis: RecognitionObject
+    static OcrThis: RecognitionObject
+
     /**
      * 创建模板匹配识别对象（推荐使用）
      * @param mat 待匹配的 OpenCV Mat 矩阵
@@ -64,9 +67,6 @@ declare global {
      */
     static ocr(x: number, y: number, w: number, h: number): RecognitionObject
     static Ocr(x: number, y: number, w: number, h: number): RecognitionObject
-
-    static ocrThis(): RecognitionObject
-    static OcrThis(): RecognitionObject
   }
 
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/Model/Area/Region.cs
