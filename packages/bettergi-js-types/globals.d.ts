@@ -30,6 +30,7 @@ declare global {
      */
     threshold?: number
     Threshold?: number
+
     /**
      * 是否使用 3 通道匹配
      * @default false
@@ -74,33 +75,42 @@ declare global {
     /** 区域的 X 坐标 */
     x: number
     X: number
+
     /** 区域的 Y 坐标 */
     y: number
     Y: number
+
     /** 区域的宽度 */
     width: number
     Width: number
+
     /** 区域的高度 */
     height: number
     Height: number
+
     /** 区域顶部位置，等同于 Y 坐标 */
     top: number
     Top: number
+
     /** 区域底部位置，等于 Y + Height */
     readonly bottom: number
     readonly Bottom: number
+
     /** 区域左侧位置，等同于 X 坐标 */
     left: number
     Left: number
+
     /** 区域右侧位置，等于 X + Width */
     readonly right: number
     readonly Right: number
+
     /** 存放 OCR 识别的结果文本 */
     text: string
     Text: string
 
     /** 创建一个空的区域对象 */
     constructor()
+
     /** 创建一个具有指定位置和大小的区域对象 */
     constructor(
       x: number,
@@ -115,9 +125,11 @@ declare global {
     /** 鼠标后台点击当前区域的中心位置 */
     backgroundClick(): void
     BackgroundClick(): void
+
     /** 鼠标点击当前区域的中心位置 */
     click(): void
     Click(): void
+
     /**
      * 鼠标点击区域内指定位置
      * @param x 区域内 X 坐标
@@ -125,6 +137,7 @@ declare global {
      */
     clickTo(x: number, y: number): void
     ClickTo(x: number, y: number): void
+
     /**
      * 鼠标点击矩形区域内中心位置
      * @param x 矩形X 坐标
@@ -134,9 +147,11 @@ declare global {
      */
     clickTo(x: number, y: number, w: number, h: number): void
     ClickTo(x: number, y: number, w: number, h: number): void
+
     /** 鼠标移动到当前区域的中心位置 */
     move(): void
     Move(): void
+
     /**
      * 鼠标移动到区域内指定位置
      * @param x 区域内 X 坐标
@@ -144,6 +159,7 @@ declare global {
      */
     moveTo(x: number, y: number): void
     MoveTo(x: number, y: number): void
+
     /**
      * 鼠标移动到矩形区域内中心位置
      * @param x 矩形X 坐标
@@ -153,6 +169,7 @@ declare global {
      */
     moveTo(x: number, y: number, w: number, h: number): void
     MoveTo(x: number, y: number, w: number, h: number): void
+
     /**
      * 绘制自身区域到遮罩窗口上
      * @param name 遮罩窗口名称
@@ -160,6 +177,7 @@ declare global {
      */
     drawSelf(name: string, pen?: Pen): void
     DrawSelf(name: string, pen?: Pen): void
+
     /**
      * 派生一个点类型的区域
      * @param x 区域内 X 坐标
@@ -167,6 +185,7 @@ declare global {
      */
     derive(x: number, y: number): Region
     Derive(x: number, y: number): Region
+
     /**
      * 派生一个矩形类型的区域
      * @param x 矩形X 坐标
@@ -176,9 +195,11 @@ declare global {
      */
     derive(x: number, y: number, w: number, h: number): Region
     Derive(x: number, y: number, w: number, h: number): Region
+
     /** 检查区域是否为空 */
     isEmpty(): boolean
     IsEmpty(): boolean
+
     /** 检查区域是否为有效 */
     isValid(): boolean
     isExist(): boolean
@@ -199,10 +220,10 @@ declare global {
     /** 获取源 OpenCV Mat 矩阵。如果需要会从 Bitmap 转换 */
     readonly srcMat: Mat
     readonly SrcMat: Mat
+
     /** 获取源图像的灰度版本 Mat 矩阵 */
     // 已失效
     // srcGreyMat: Mat;
-
     /** 获取缓存的灰度版本 Mat 矩阵 */
     readonly cacheGreyMat: Mat
     readonly CacheGreyMat: Mat
@@ -226,12 +247,14 @@ declare global {
      */
     deriveCrop(x: number, y: number, w: number, h: number): ImageRegion
     DeriveCrop(x: number, y: number, w: number, h: number): ImageRegion
+
     /**
      * 在区域内查找识别对象
      * @param ro 待匹配的识别对象
      */
     find(ro: RecognitionObject): Region
     Find(ro: RecognitionObject): Region
+
     /**
      * 查找多个识别对象实例
      * @param ro 待匹配的识别对象
@@ -247,7 +270,9 @@ declare global {
   // https://bettergi.com/feats/append/keycodes.html
   // https://learn.microsoft.com/zh-cn/windows/win32/inputdev/virtual-key-codes
   type Key = 'LBUTTON' | 'RBUTTON' | 'CANCEL' | 'MBUTTON' | 'XBUTTON1' | 'XBUTTON2' | 'BACK' | 'TAB' | 'CLEAR' | 'RETURN' | 'SHIFT' | 'CONTROL' | 'MENU' | 'PAUSE' | 'CAPITAL' | 'ESCAPE' | 'SPACE' | 'PRIOR' | 'NEXT' | 'END' | 'HOME' | 'LEFT' | 'UP' | 'RIGHT' | 'DOWN' | 'SELECT' | 'PRINT' | 'EXECUTE' | 'SNAPSHOT' | 'INSERT' | 'DELETE' | 'HELP' | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | 'LWIN' | 'RWIN' | 'APPS' | 'NUMPAD0' | 'NUMPAD1' | 'NUMPAD2' | 'NUMPAD3' | 'NUMPAD4' | 'NUMPAD5' | 'NUMPAD6' | 'NUMPAD7' | 'NUMPAD8' | 'NUMPAD9' | 'MULTIPLY' | 'ADD' | 'SEPARATOR' | 'SUBTRACT' | 'DECIMAL' | 'DIVIDE' | 'F1' | 'F2' | 'F3' | 'F4' | 'F5' | 'F6' | 'F7' | 'F8' | 'F9' | 'F10' | 'F11' | 'F12' | 'F13' | 'F14' | 'F15' | 'F16' | 'F17' | 'F18' | 'F19' | 'F20' | 'F21' | 'F22' | 'F23' | 'F24' | 'NUMLOCK' | 'SCROLL' | 'LSHIFT' | 'RSHIFT' | 'LCONTROL' | 'RCONTROL' | 'LMENU' | 'RMENU'
+
   type AddVKPrefix<T> = `VK_${T}`
+
   type VKey = AddVKPrefix<Key> // VK_ 前缀
     | Key // 原始键名
     | Lowercase<AddVKPrefix<Key>> // VK_ 前缀的小写形式
@@ -309,22 +334,28 @@ declare global {
 
   /** 点击鼠标左键 */
   function leftButtonClick(): void
+
   /** 按下鼠标左键 */
   function leftButtonDown(): void
+
   /** 释放鼠标左键 */
   function leftButtonUp(): void
 
   /** 点击鼠标右键 */
   function rightButtonClick(): void
+
   /** 按下鼠标右键 */
   function rightButtonDown(): void
+
   /** 释放鼠标右键 */
   function rightButtonUp(): void
 
   /** 点击鼠标中键 */
   function middleButtonClick(): void
+
   /** 按下鼠标中键 */
   function middleButtonDown(): void
+
   /** 释放鼠标中键 */
   function middleButtonUp(): void
 
@@ -341,44 +372,52 @@ declare global {
   function inputText(text: string): void
 
   interface Callback<T> {
+    /**
+     * 回调函数
+     * @param error 错误信息，如果有的话
+     * @param context 回调内容
+     */
     (error?: string, context?: T): void
   }
 
   // 文件读取
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/LimitedFile.cs
-  class File {
+  interface File {
     /**
      * 读取指定文件夹内所有文件和文件夹的路径
      * @param folderPath 文件夹路径
      */
-    readPathSync(folderPath: string): string[]
-    ReadPathSync(folderPath: string): string[]
+    readPathSync: (folderPath: string) => string[]
+    ReadPathSync: (folderPath: string) => string[]
+
     /**
      * 判断指定路径是否为文件夹
      * @param path 文件路径
      */
-    isFolder(path: string): boolean
-    IsFolder(path: string): boolean
+    isFolder: (path: string) => boolean
+    IsFolder: (path: string) => boolean
+
     /**
      * 同步读取文本
      * @param path 文件路径
      */
-    readTextSync(path: string): string
-    ReadTextSync(path: string): string
+    readTextSync: (path: string) => string
+    ReadTextSync: (path: string) => string
+
     /**
      * 异步读取文本
      * @param path 文件路径
      * @param callback 回调函数，参数为读取到的文本内容
      */
-    readText(path: string, callback?: Callback<string>): Promise<string>
-    ReadText(path: string, callback?: Callback<string>): Promise<string>
+    readText: (path: string, callback?: Callback<string>) => Promise<string>
+    ReadText: (path: string, callback?: Callback<string>) => Promise<string>
 
     /**
      * 同步读取图像
      * @param path 文件路径
      */
-    readImageMatSync(path: string): Mat
-    ReadImageMatSync(path: string): Mat
+    readImageMatSync: (path: string) => Mat
+    ReadImageMatSync: (path: string) => Mat
 
     /**
      * 同步写入
@@ -386,74 +425,81 @@ declare global {
      * @param content 要写入的内容
      * @param append 是否追加模式，默认为 false 表示覆盖写入
      */
-    writeTextSync(path: string, content: string, append?: boolean): boolean
-    WriteTextSync(path: string, content: string, append?: boolean): boolean
+    writeTextSync: (path: string, content: string, append?: boolean) => boolean
+    WriteTextSync: (path: string, content: string, append?: boolean) => boolean
 
     /**
      * 异步写入
      * @param path 文件路径
      * @param content 要写入的内容
-     * @param callback 回调函数
+     * @param appendOrCallback 追加模式 或 回调函数
      * @param append 是否追加模式，默认为 false 表示覆盖写入
+     *
+     * PS：此类型重载暂无法实现（请依据下面注释的原型进行调用）
+     *
+     * writeText(path: string, content: string, append?: boolean = false)
+     * writeText(path: string, content: string, callback: Callback<boolean>, append?: boolean = false)
      */
-    writeText(path: string, content: string, append?: boolean): Promise<boolean>
-    WriteText(path: string, content: string, append?: boolean): Promise<boolean>
-    writeText(path: string, content: string, callback?: Callback<boolean>, append?: boolean): Promise<boolean>
-    WriteText(path: string, content: string, callback?: Callback<boolean>, append?: boolean): Promise<boolean>
+    writeText: (path: string, content: string, appendOrCallback?: boolean | Callback<boolean>, append?: boolean) => Promise<boolean>
+    WriteText: (path: string, content: string, appendOrCallback?: boolean | Callback<boolean>, append?: boolean) => Promise<boolean>
   }
 
   const file: File
 
   // 日志
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Log.cs
-  class Log {
+  interface Log {
     /**
      * 在遮罩日志窗口输出调试级别的信息
      * @param message 日志消息
      * @param args 日志参数
      */
-    debug(message: string, ...args: any[]): void
-    Debug(message: string, ...args: any[]): void
+    debug: (message: string, ...args: any[]) => void
+    Debug: (message: string, ...args: any[]) => void
+
     /**
      * 在遮罩日志窗口输出信息级别的信息
      * @param message 日志消息
      * @param args 日志参数
      */
-    info(message: string, ...args: any[]): void
-    Info(message: string, ...args: any[]): void
+    info: (message: string, ...args: any[]) => void
+    Info: (message: string, ...args: any[]) => void
+
     /**
      * 在遮罩日志窗口输出警告级别的信息
      * @param message 日志消息
      * @param args 日志参数
      */
-    warn(message: string, ...args: any[]): void
-    Warn(message: string, ...args: any[]): void
+    warn: (message: string, ...args: any[]) => void
+    Warn: (message: string, ...args: any[]) => void
+
     /**
      * 在遮罩日志窗口输出错误级别的信息
      * @param message 日志消息
      * @param args 日志参数
      */
-    error(message: string, ...args: any[]): void
-    Error(message: string, ...args: any[]): void
+    error: (message: string, ...args: any[]) => void
+    Error: (message: string, ...args: any[]) => void
   }
 
   const log: Log
 
   // 发送通知
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Notification.cs
-  class Notification {
+  interface Notification {
     /**
      * 发送通知
      * @param message 通知消息
      */
-    send(message: string): void
-    Send(message: string): void
+    send: (message: string) => void
+    Send: (message: string) => void
+
     /**
      * 发送错误通知
      * @param message 通知消息
      */
-    error(message: string): void
-    Error(message: string): void
+    error: (message: string) => void
+    Error: (message: string) => void
   }
 
   const notification: Notification
@@ -488,7 +534,7 @@ declare global {
     | 3 // 不调
 
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Genshin.cs
-  class Genshin {
+  interface Genshin {
     /** 获取游戏窗口宽度 */
     readonly width: number
     readonly Width: number
@@ -509,22 +555,17 @@ declare global {
      * 传送到指定位置
      * @param x X 坐标
      * @param y Y 坐标
+     * @param mapNameOrForce 地图名称 或者 是否强制传送，默认为false
      * @param force 是否强制传送，默认为false
+     *
+     * PS：此类型重载暂无法实现(请依据下面注释的原型进行调用)
+     *
+     * tp(x: number, y: number, force?: boolean = false)
+     * tp(x: string, y: string, force?: boolean = false)
+     * tp(x: number, y: number, mapName: string, force?: boolean = false)
      */
-    tp(x: number, y: number, force?: boolean): Promise<void>
-    Tp(x: number, y: number, force?: boolean): Promise<void>
-    tp(x: string, y: string, force?: boolean): Promise<void>
-    Tp(x: string, y: string, force?: boolean): Promise<void>
-
-    /**
-     * 传送到指定位置
-     * @param x X 坐标
-     * @param y Y 坐标
-     * @param mapName 地图名称
-     * @param force 是否强制传送，默认为false
-     */
-    tp(x: number, y: number, mapName: MapType, force?: boolean): Promise<void>
-    Tp(x: number, y: number, mapName: MapType, force?: boolean): Promise<void>
+    tp: <T = number | string> (x: T, y: T, mapNameOrForce?: MapType | boolean, force?: boolean) => Promise<void>
+    Tp: <T = number | string> (x: T, y: T, mapNameOrForce?: MapType | boolean, force?: boolean) => Promise<void>
 
     /**
      * 移动大地图到指定坐标
@@ -532,8 +573,8 @@ declare global {
      * @param y 目标Y坐标
      * @param forceCountry 强制指定移动大地图时先切换的国家，默认为undefined
      */
-    moveMapTo(x: number, y: number, forceCountry?: ForceCountry): Promise<void>
-    MoveMapTo(x: number, y: number, forceCountry?: ForceCountry): Promise<void>
+    moveMapTo: (x: number, y: number, forceCountry?: ForceCountry) => Promise<void>
+    MoveMapTo: (x: number, y: number, forceCountry?: ForceCountry) => Promise<void>
 
     /**
      * 移动大地图到指定坐标
@@ -542,55 +583,55 @@ declare global {
      * @param mapName 地图名称
      * @param forceCountry 强制指定移动大地图时先切换的国家，默认为undefined
      */
-    moveIndependentMapTo(x: number, y: number, mapName: MapType, forceCountry?: ForceCountry): Promise<void>
-    MoveIndependentMapTo(x: number, y: number, mapName: MapType, forceCountry?: ForceCountry): Promise<void>
+    moveIndependentMapTo: (x: number, y: number, mapName: MapType, forceCountry?: ForceCountry) => Promise<void>
+    MoveIndependentMapTo: (x: number, y: number, mapName: MapType, forceCountry?: ForceCountry) => Promise<void>
 
     /**
      * 获取当前大地图缩放等级
      * @returns 当前大地图缩放等级，范围1.0-6.0
      */
-    getBigMapZoomLevel(): number
-    GetBigMapZoomLevel(): number
+    getBigMapZoomLevel: () => number
+    GetBigMapZoomLevel: () => number
 
     /**
      * 设置大地图缩放等级
      * @param zoomLevel 目标缩放等级，范围 1.0-6.0
      */
-    setBigMapZoomLevel(zoomLevel: number): Promise<void>
-    SetBigMapZoomLevel(zoomLevel: number): Promise<void>
+    setBigMapZoomLevel: (zoomLevel: number) => Promise<void>
+    SetBigMapZoomLevel: (zoomLevel: number) => Promise<void>
 
     /**
      * 传送到用户指定的七天神像
      */
-    tpToStatueOfTheSeven(): Promise<void>
-    TpToStatueOfTheSeven(): Promise<void>
+    tpToStatueOfTheSeven: () => Promise<void>
+    TpToStatueOfTheSeven: () => Promise<void>
 
     /**
      * 获取当前在大地图上的位置坐标
      * @param mapName 地图名称
      */
-    getPositionFromBigMap(mapName?: MapType): Point2f
-    GetPositionFromBigMap(mapName?: MapType): Point2f
+    getPositionFromBigMap: (mapName?: MapType) => Point2f
+    GetPositionFromBigMap: (mapName?: MapType) => Point2f
 
     /**
      * 获取当前在小地图上的位置坐标
      * @param mapName 地图名称
      */
-    getPositionFromMap(mapName?: MapType): Point2f
-    GetPositionFromMap(mapName?: MapType): Point2f
+    getPositionFromMap: (mapName?: MapType) => Point2f
+    GetPositionFromMap: (mapName?: MapType) => Point2f
 
     /**
      * 切换队伍
      * @param partyName 队伍界面自定义的队伍名称
      */
-    switchParty(partyName: string): Promise<boolean>
-    SwitchParty(partyName: string): Promise<boolean>
+    switchParty: (partyName: string) => Promise<boolean>
+    SwitchParty: (partyName: string) => Promise<boolean>
 
     /**
      * 自动点击空月祝福
      */
-    blessingOfTheWelkinMoon(): Promise<void>
-    BlessingOfTheWelkinMoon(): Promise<void>
+    blessingOfTheWelkinMoon: () => Promise<void>
+    BlessingOfTheWelkinMoon: () => Promise<void>
 
     /**
      * 持续对话并选择目标选项
@@ -598,97 +639,97 @@ declare global {
      * @param skipTimes 跳过次数，默认为10
      * @param isOrange 是否为橙色选项，默认为false
      */
-    chooseTalkOption(option: string, skipTimes?: number, isOrange?: boolean): Promise<void>
-    ChooseTalkOption(option: string, skipTimes?: number, isOrange?: boolean): Promise<void>
+    chooseTalkOption: (option: string, skipTimes?: number, isOrange?: boolean) => Promise<void>
+    ChooseTalkOption: (option: string, skipTimes?: number, isOrange?: boolean) => Promise<void>
 
     /**
      * 一键领取纪行奖励
      */
-    claimBattlePassRewards(): Promise<void>
-    ClaimBattlePassRewards(): Promise<void>
+    claimBattlePassRewards: () => Promise<void>
+    ClaimBattlePassRewards: () => Promise<void>
 
     /**
      * 领取长效历练点奖励
      */
-    claimEncounterPointsRewards(): Promise<void>
-    ClaimEncounterPointsRewards(): Promise<void>
+    claimEncounterPointsRewards: () => Promise<void>
+    ClaimEncounterPointsRewards: () => Promise<void>
 
     /**
      * 前往冒险家协会领取奖励
      * @param country 国家名称
      */
-    goToAdventurersGuild(country: AdventurersGuildCountry): Promise<void>
-    GoToAdventurersGuild(country: AdventurersGuildCountry): Promise<void>
+    goToAdventurersGuild: (country: AdventurersGuildCountry) => Promise<void>
+    GoToAdventurersGuild: (country: AdventurersGuildCountry) => Promise<void>
 
     /**
      * 前往合成台
      * @param country 国家名称
      */
-    goToCraftingBench(country: CraftingBenchCountry): Promise<void>
-    GoToCraftingBench(country: CraftingBenchCountry): Promise<void>
+    goToCraftingBench: (country: CraftingBenchCountry) => Promise<void>
+    GoToCraftingBench: (country: CraftingBenchCountry) => Promise<void>
 
     /**
      * 返回主界面
      */
-    returnMainUi(): Promise<void>
-    ReturnMainUi(): Promise<void>
+    returnMainUi: () => Promise<void>
+    ReturnMainUi: () => Promise<void>
 
     /**
      * 自动钓鱼
      * @param fishingTimePolicy 钓鱼时间策略，默认为0
      */
-    autoFishing(fishingTimePolicy?: FishingTimePolicy): Promise<void>
-    AutoFishing(fishingTimePolicy?: FishingTimePolicy): Promise<void>
+    autoFishing: (fishingTimePolicy?: FishingTimePolicy) => Promise<void>
+    AutoFishing: (fishingTimePolicy?: FishingTimePolicy) => Promise<void>
 
     /**
      * 返回到登录界面并重新开门进入游戏
      */
-    relogin(): Promise<void>
-    Relogin(): Promise<void>
+    relogin: () => Promise<void>
+    Relogin: () => Promise<void>
   }
 
   const genshin: Genshin
 
   // 调用其他脚本
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/AutoPathingScript.cs
-  class PathingScript {
+  interface PathingScript {
     /**
      * 运行地图追踪任务
      * @param json 自动路径任务的JSON字符串
      */
-    run(json: string): Promise<void>
-    Run(json: string): Promise<void>
+    run: (json: string) => Promise<void>
+    Run: (json: string) => Promise<void>
 
     /**
      * 从文件中读取地图追踪任务并运行
      * @param path 相对文件路径，只允许读取脚本目录下文件
      */
-    runFile(path: string): Promise<void>
-    RunFile(path: string): Promise<void>
+    runFile: (path: string) => Promise<void>
+    RunFile: (path: string) => Promise<void>
 
     /**
      * 从文件中读取地图追踪任务并运行
      * @param path 相对文件路径，在 /User/AutoPathing 目录下获取文件
      */
-    runFileFromUser(path: string): Promise<void>
-    RunFileFromUser(path: string): Promise<void>
+    runFileFromUser: (path: string) => Promise<void>
+    RunFileFromUser: (path: string) => Promise<void>
   }
 
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/KeyMouseScript.cs
-  class KeyMouseScript {
+  interface KeyMouseScript {
     /**
      * 运行键鼠脚本任务
      * @param json 键鼠脚本任务的JSON字符串
      */
-    run(json: string): Promise<void>
-    Run(json: string): Promise<void>
+    run: (json: string) => Promise<void>
+    Run: (json: string) => Promise<void>
 
     /**
      * 从文件中读取键鼠脚本任务并运行
      * @param path 文件路径，只允许读取脚本目录下文件
      */
-    runFile(path: string): Promise<void>
-    RunFile(path: string): Promise<void>
+    runFile: (path: string) => Promise<void>
+    RunFile: (path: string) => Promise<void>
   }
 
   const pathingScript: PathingScript
@@ -706,13 +747,13 @@ declare global {
     /** 实时任务触发器名称 */
     name?: N
     Name?: string
+
     /**
      * 实时任务触发器时间间隔(毫秒)
      * @default 50
      */
     interval: number
     Interval: number
-
     constructor()
     constructor(name: N, config?: any)
   }
@@ -749,55 +790,55 @@ declare global {
     readonly token: CancellationToken
     readonly Token: CancellationToken
 
+    /** 取消 */
     cancel(): void
     Cancel(): void
   }
 
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Dispatcher.cs
-  class Dispatcher {
+  interface Dispatcher {
     /**
      * 添加实时任务,会清理之前的所有任务
      * @param timer 实时任务触发器
      */
-    addTimer(timer: RealtimeTimer): void
-    AddTimer(timer: RealtimeTimer): void
+    addTimer: (timer: RealtimeTimer) => void
+    AddTimer: (timer: RealtimeTimer) => void
 
     /** 清理所有实时任务 */
-    clearAllTriggers(): void
-    ClearAllTriggers(): void
+    clearAllTriggers: () => void
+    ClearAllTriggers: () => void
 
     /**
      * 添加实时任务,不会清理之前的任务
      * @param timer 实时任务触发器
      */
-    addTrigger(timer: RealtimeTimer): void
-    AddTrigger(timer: RealtimeTimer): void
+    addTrigger: (timer: RealtimeTimer) => void
+    AddTrigger: (timer: RealtimeTimer) => void
 
     /**
      * 运行独立任务
      * @param soloTask 独立任务对象
      */
-    runTask(soloTask: SoloTask, customCt?: CancellationToken): Promise<void>
-    RunTask(soloTask: SoloTask, customCt?: CancellationToken): Promise<void>
-    runTask(soloTask: SoloTask, customCts: CancellationTokenSource): Promise<void>
-    RunTask(soloTask: SoloTask, customCts: CancellationTokenSource): Promise<void>
+    runTask: (soloTask: SoloTask, customCt?: CancellationToken | CancellationTokenSource) => Promise<void>
+    RunTask: (soloTask: SoloTask, customCt?: CancellationToken | CancellationTokenSource) => Promise<void>
 
     /**
      * 获取一个取消令牌，用于在多线程场景下取消任务
      */
-    getLinkedCancellationToken(): CancellationToken
-    GetLinkedCancellationToken(): CancellationToken
+    getLinkedCancellationToken: () => CancellationToken
+    GetLinkedCancellationToken: () => CancellationToken
 
     /**
      * 创建一个新的链接令牌源，链接到全局令牌源
      */
-    getLinkedCancellationTokenSource(): CancellationTokenSource
-    GetLinkedCancellationTokenSource(): CancellationTokenSource
+    getLinkedCancellationTokenSource: () => CancellationTokenSource
+    GetLinkedCancellationTokenSource: () => CancellationTokenSource
   }
 
   const dispatcher: Dispatcher
 
   // 设置
+  // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Model/SettingItem.cs
   interface Settings {
     readonly [key: string]: string | boolean
   }
