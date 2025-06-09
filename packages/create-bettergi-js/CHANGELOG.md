@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.0.2
+
+### Patch Changes
+
+- [`32b2dcf`](https://github.com/ftnfurina/bettergi-js/commit/32b2dcf4e36a3ebf996f83d7112704e4d83351de) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Fix dependence deficiency
+
 ## 0.0.1
 
 ### Patch Changes
