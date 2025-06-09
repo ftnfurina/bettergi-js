@@ -1,0 +1,7 @@
+[
+  {
+    "name": "prefix",
+    "type": "input-text",
+    "label": "前缀"
+  }
+]

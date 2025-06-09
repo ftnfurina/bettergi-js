@@ -1,0 +1,26 @@
+{
+  "name": "bettergi-js-types",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "BetterGI JS 脚本类型定义",
+  "author": {
+    "name": "ftnfurina",
+    "github": "https://github.com/ftnfurina"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ftnfurina/bettergi-js.git"
+  },
+  "keywords": [
+    "bettergi",
+    "javascript",
+    "types"
+  ],
+  "main": "",
+  "types": "index.d.ts",
+  "files": [
+    "globals.d.ts",
+    "index.d.ts"
+  ]
+}

@@ -1,0 +1,6 @@
+packages:
+  - examples/*
+  - packages/*
+onlyBuiltDependencies:
+  - esbuild
+  - simple-git-hooks

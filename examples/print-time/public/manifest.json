@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "打印时间",
+  "version": "1.0",
+  "description": "打印当前时间",
+  "authors": [
+    {
+      "name": "ftnfurina",
+      "link": "https://github.com/ftnfurina"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "index.js"
+}

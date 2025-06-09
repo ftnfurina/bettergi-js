@@ -1,0 +1,30 @@
+{
+  "name": "bettergi-js",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.6.5",
+  "author": {
+    "name": "ftnfurina",
+    "email": "ftnfurina@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm --filter=./packages/** build",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "changeset": "changeset",
+    "postinstall": "simple-git-hooks",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.14.1",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.27.1",
+    "eslint": "^9.28.0",
+    "simple-git-hooks": "^2.13.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint:fix && git add ."
+  }
+}
