@@ -695,10 +695,16 @@ declare global {
   const keyMouseScript: KeyMouseScript
 
   // 调用任务
+
+  // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/GameTaskManager.cs#L87-L97
+  type RealtimeTimerName = 'AutoPick'
+    | 'AutoSkip'
+    | (string & {})
+
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Model/RealTimeTimer.cs
-  class RealtimeTimer {
+  class RealtimeTimer<N = RealtimeTimerName> {
     /** 实时任务触发器名称 */
-    name?: string
+    name?: N
     Name?: string
     /**
      * 实时任务触发器时间间隔(毫秒)
@@ -708,9 +714,10 @@ declare global {
     Interval: number
 
     constructor()
-    constructor(name: string, config?: any)
+    constructor(name: N, config?: any)
   }
 
+  // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Dispatcher.cs#L132-L168
   type SoloTaskName = 'AutoGeniusInvokation'
     | 'AutoWood'
     | 'AutoFight'
