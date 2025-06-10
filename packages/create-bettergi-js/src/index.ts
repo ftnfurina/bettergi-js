@@ -66,7 +66,7 @@ async function init() {
     {
       type: 'confirm',
       name: 'addSchema',
-      message: chalk.green('Do you want to add settings.json and manifest.json schema?'),
+      message: chalk.green('Do you want to add \'settings\' and \'manifest\' schema?'),
       initial: true,
     },
   ])
