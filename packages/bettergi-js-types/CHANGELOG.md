@@ -1,5 +1,11 @@
 # bettergi-js-types
 
+## 0.2.0
+
+### Minor Changes
+
+- [`1140a53`](https://github.com/ftnfurina/bettergi-js/commit/1140a5340b19a42a65b567fb67b7febfdfc536e6) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Improve structure
+
 ## 0.1.1
 
 ### Patch Changes
