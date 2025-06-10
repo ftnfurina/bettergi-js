@@ -10,6 +10,7 @@
     "lmenu",
     "lshift",
     "lwin",
+    "movemapto",
     "npmjs",
     "numlock",
     "pathing",
@@ -18,6 +19,7 @@
     "rmenu",
     "rshift",
     "rwin",
+    "screendpiscale",
     "teyvat",
     "xbutton"
   ],

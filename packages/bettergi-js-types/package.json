@@ -20,7 +20,7 @@
   "main": "",
   "types": "index.d.ts",
   "files": [
-    "globals.d.ts",
-    "index.d.ts"
+    "index.d.ts",
+    "types"
   ]
 }

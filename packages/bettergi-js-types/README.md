@@ -43,3 +43,30 @@ interface Settings {
 const name = settings.name // string
 const isOpen = settings.open // boolean
 ```
+
+## 重要信息
+
+除开全局方法大小写敏感之外，其他任意 BetterGI 内置类型的属性和方法大小写不敏感。
+所以，此定义文件目前只提供了小驼峰 和 大驼峰(兼容适配，后续可能会逐步废弃) 两种命名风格的定义。
+
+例如:
+
+```typescript
+// 全局方法
+keyDown('W') // 正确
+KeyDown('W') // 错误
+KEYDOWN('W') // 错误
+keydown('W') // 错误
+
+// 方法
+genshin.moveMapTo(0, 0) // 正确 小驼峰
+genshin.MoveMapTo(0, 0) // 正确 大驼峰
+genshin.MOVEMAPTO(0, 0) // 正确
+genshin.movemapto(0, 0) // 正确
+
+// 属性
+genshin.screenDpiScale // 正确 小驼峰
+genshin.ScreenDpiScale // 正确 大驼峰
+genshin.SCREENDPISCALE // 正确
+genshin.screendpiscale // 正确
+```
