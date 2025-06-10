@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.0.4
+
+### Patch Changes
+
+- [`980676d`](https://github.com/ftnfurina/bettergi-js/commit/980676d24557675ad58f1919343173f07b05674f) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update template dependencies version
+
 ## 0.0.3
 
 ### Patch Changes
