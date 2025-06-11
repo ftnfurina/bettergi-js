@@ -1,5 +1,11 @@
 # bettergi-js-types
 
+## 0.3.0
+
+### Minor Changes
+
+- [`720e85e`](https://github.com/ftnfurina/bettergi-js/commit/720e85e01c92fbaf2e43f7ec82f7c66e292a6229) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Add some class types
+
 ## 0.2.0
 
 ### Minor Changes
