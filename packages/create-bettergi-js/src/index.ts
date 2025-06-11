@@ -47,7 +47,7 @@ async function init() {
     {
       type: 'text',
       name: 'projectName',
-      initial: 'bettergi-js-project',
+      initial: 'better-gi-js-project',
       message: chalk.green('Project name:'),
       format: value => value.trim(),
       validate: name => name.trim() === ''
