@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.1.2
+
+### Patch Changes
+
+- [`efbb048`](https://github.com/ftnfurina/bettergi-js/commit/efbb048f2ff9836c59aa1035fc3f9f1dff65f821) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update readme
+
 ## 0.1.1
 
 ### Patch Changes
