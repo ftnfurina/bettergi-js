@@ -4,10 +4,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "build:watch": "tsup --watch"
   },
   "devDependencies": {
-    "bettergi-js-types": "^0.2.0",
+    "bettergi-js-types": "^0.3.0",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   }

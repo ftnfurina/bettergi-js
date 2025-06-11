@@ -80,20 +80,30 @@ async function init() {
   const pkg = path.join(root, 'package.json')
   const manifest = path.join(root, 'public/manifest.json')
   const settings = path.join(root, '.vscode/settings.json')
+  const scriptReadme = path.join(root, 'public/README.md')
 
   fs.mkdirSync(root, { recursive: true })
-  fs.copySync(template, root, { overwrite: false, errorOnExist: true })
+  fs.copySync(template, root, {
+    overwrite: false,
+    errorOnExist: true,
+    filter: src => !src.endsWith('.gitkeep'),
+  })
 
   const pkgJson = fs.readJSONSync(pkg, { encoding: 'utf-8' })
   pkgJson.name = options.packageName
   delete pkgJson.private
   fs.writeJSONSync(pkg, pkgJson, { spaces: 2 })
 
+  const packageNamePascalCase = toPascalCase(options.packageName)
   const manifestJson = fs.readJSONSync(manifest, { encoding: 'utf-8' })
-  manifestJson.name = toPascalCase(options.packageName)
+  manifestJson.name = packageNamePascalCase
   fs.writeJSONSync(manifest, manifestJson, { spaces: 2 })
 
   fs.renameSync(path.join(root, '_gitignore'), path.join(root, '.gitignore'))
+
+  const scriptReadmeContent = fs.readFileSync(scriptReadme, { encoding: 'utf-8' })
+    .replace(/\{\{name\}\}/g, () => packageNamePascalCase)
+  fs.writeFileSync(scriptReadme, scriptReadmeContent)
 
   if (!options.addSchema) {
     fs.removeSync(settings)

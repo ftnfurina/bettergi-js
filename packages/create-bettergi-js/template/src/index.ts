@@ -1,1 +1,1 @@
-(async () => log.info('Hello, world!'))()
+(async () => log.info('Hello BetterGI!'))()
