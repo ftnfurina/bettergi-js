@@ -1,5 +1,6 @@
 import type { ImageRegion } from './rec'
 
+// 虚拟键码表
 // https://bettergi.com/feats/append/keycodes.html
 // https://learn.microsoft.com/zh-cn/windows/win32/inputdev/virtual-key-codes
 /** 游戏内按键 */
@@ -24,19 +25,22 @@ export function sleep(millisecondsTimeout: number): Promise<void>
 
 /**
  * 按下指定的键
- * @param key 要按下的键，具体可用参数见虚拟键代码表
+ * @see {@link https://bettergi.com/feats/append/keycodes.html} 虚拟键码表
+ * @param key 键名
  */
 export function keyDown(key: VKey): void
 
 /**
  * 释放指定的键
- * @param key 要释放的键，具体可用参数见虚拟键代码表
+ * @see {@link https://bettergi.com/feats/append/keycodes.html} 虚拟键码表
+ * @param key 键名
  */
 export function keyUp(key: VKey): void
 
 /**
  * 按下并释放指定的键
- * @param key 要按下并释放的键，具体可用参数见虚拟键代码表
+ * @see {@link https://bettergi.com/feats/append/keycodes.html} 虚拟键码表
+ * @param key 键名
  */
 export function keyPress(key: VKey): void
 
@@ -104,3 +108,42 @@ export function captureGameRegion(): ImageRegion
  * @param text 要输入的文本
  */
 export function inputText(text: string): void
+
+// https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/Simulator/PostMessage.cs
+export class PostMessage {
+  constructor()
+
+  /**
+   * 按下指定的键，推荐使用全局方法 `keyDown` 代替
+   * @see {@link keyDown} 推荐使用全局方法 `keyDown` 代替
+   * @see {@link https://bettergi.com/feats/append/keycodes.html} 虚拟键码表
+   * @param key 键名
+   */
+  keyDown(key: VKey): void
+  KeyDown(key: VKey): void
+
+  /**
+   * 释放指定的键
+   * @see {@link keyUp} 推荐使用全局方法 `keyUp` 代替
+   * @see {@link https://bettergi.com/feats/append/keycodes.html} 虚拟键码表
+   * @param key 键名
+   */
+  keyUp(key: VKey): void
+  KeyUp(key: VKey): void
+
+  /**
+   * 按下并释放指定的键
+   * @see {@link keyPress} 推荐使用全局方法 `keyPress` 代替
+   * @see {@link https://bettergi.com/feats/append/keycodes.html} 虚拟键码表
+   * @param key 键名
+   */
+  keyPress(key: VKey): void
+  KeyPress(key: VKey): void
+
+  /**
+   * 点击鼠标左键
+   * @see {@link leftButtonClick} 推荐使用全局方法 `leftButtonClick` 代替
+   */
+  click(): void
+  Click(): void
+}

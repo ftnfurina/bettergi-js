@@ -59,10 +59,9 @@ declare global {
   const ImageRegion: typeof import('./rec').ImageRegion
   const Region: typeof import('./rec').Region
 
-  // TODO: 补充其他类型
-  // const DesktopRegion: any
-  // const GameCaptureRegion: any
-  // const PostMessage: any
+  const DesktopRegion: typeof import('./rec').DesktopRegion
+  const GameCaptureRegion: typeof import('./rec').GameCaptureRegion
+  const PostMessage: typeof import('./method').PostMessage
 }
 
 export { }

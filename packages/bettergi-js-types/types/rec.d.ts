@@ -2,6 +2,13 @@
 /** OpenCV Mat 矩阵 */
 export type Mat = any
 
+// 未注入类型
+type INodeConverter = any
+type DrawContent = any
+type Pen = any
+type RectDrawable = any
+type LineDrawable = any
+
 /** C# 数组 */
 interface List<T> {
   [Symbol.iterator]: () => IterableIterator<T>
@@ -10,9 +17,6 @@ interface List<T> {
   count: number
   Count: number
 }
-
-type INodeConverter = any
-type DrawContent = any
 
 // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Recognition/RecognitionObject.cs
 export class RecognitionObject {
@@ -123,18 +127,18 @@ export class Region {
 
   /**
    * 鼠标点击区域内指定位置
-   * @param x 区域内 X 坐标
-   * @param y 区域内 Y 坐标
+   * @param x X 坐标
+   * @param y Y 坐标
    */
   clickTo(x: number, y: number): void
   ClickTo(x: number, y: number): void
 
   /**
    * 鼠标点击矩形区域内中心位置
-   * @param x 矩形X 坐标
-   * @param y 矩形Y 坐标
-   * @param w 矩形宽度
-   * @param h 矩形高度
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
    */
   clickTo(x: number, y: number, w: number, h: number): void
   ClickTo(x: number, y: number, w: number, h: number): void
@@ -145,18 +149,18 @@ export class Region {
 
   /**
    * 鼠标移动到区域内指定位置
-   * @param x 区域内 X 坐标
-   * @param y 区域内 Y 坐标
+   * @param x X 坐标
+   * @param y Y 坐标
    */
   moveTo(x: number, y: number): void
   MoveTo(x: number, y: number): void
 
   /**
    * 鼠标移动到矩形区域内中心位置
-   * @param x 矩形X 坐标
-   * @param y 矩形Y 坐标
-   * @param w 矩形宽度
-   * @param h 矩形高度
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
    */
   moveTo(x: number, y: number, w: number, h: number): void
   MoveTo(x: number, y: number, w: number, h: number): void
@@ -171,18 +175,18 @@ export class Region {
 
   /**
    * 派生一个点类型的区域
-   * @param x 区域内 X 坐标
-   * @param y 区域内 Y 坐标
+   * @param x X 坐标
+   * @param y Y 坐标
    */
   derive(x: number, y: number): Region
   Derive(x: number, y: number): Region
 
   /**
    * 派生一个矩形类型的区域
-   * @param x 矩形X 坐标
-   * @param y 矩形Y 坐标
-   * @param w 矩形宽度
-   * @param h 矩形高度
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
    */
   derive(x: number, y: number, w: number, h: number): Region
   Derive(x: number, y: number, w: number, h: number): Region
@@ -239,4 +243,121 @@ export class ImageRegion extends Region {
    */
   findMulti(ro: RecognitionObject): List<Region>
   FindMulti(ro: RecognitionObject): List<Region>
+}
+
+// https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/Model/Area/DesktopRegion.cs
+export class DesktopRegion extends Region {
+  // constructor(mouse: IMouseSimulator)
+
+  /**
+   * 鼠标点击矩形区域内中心位置
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
+   */
+  desktopRegionClick(x: number, y: number, w: number, h: number): void
+  DesktopRegionClick(x: number, y: number, w: number, h: number): void
+
+  /**
+   * 鼠标移动到矩形区域内中心位置
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
+   */
+  desktopRegionMove(x: number, y: number, w: number, h: number): void
+  DesktopRegionMove(x: number, y: number, w: number, h: number): void
+
+  /**
+   * 派生一个游戏捕获的区域
+   * @param captureMat OpenCV Mat 矩阵
+   * @param x X 坐标
+   * @param y Y 坐标
+   */
+  derive(captureMat: Mat, x: number, y: number): GameCaptureRegion
+  Derive(captureMat: Mat, x: number, y: number): GameCaptureRegion
+
+  /**
+   * 鼠标点击指定位置
+   * @param x X 坐标
+   * @param y Y 坐标
+   */
+  static desktopRegionClick(x: number, y: number): void
+  static DesktopRegionClick(x: number, y: number): void
+
+  /**
+   * 鼠标移动到指定位置
+   * @param x X 坐标
+   * @param y Y 坐标
+   */
+  static desktopRegionMove(x: number, y: number): void
+  static DesktopRegionMove(x: number, y: number): void
+
+  /**
+   * 移动鼠标相对于当前位置的偏移量
+   * @param x X 偏移量
+   * @param y Y 偏移量
+   */
+  static desktopRegionMoveBy(x: number, y: number): void
+  static DesktopRegionMoveBy(x: number, y: number): void
+}
+
+// https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/Model/Area/GameCaptureRegion.cs
+export class GameCaptureRegion extends ImageRegion {
+  /**
+   * 在游戏捕获图像的坐标维度进行转换到遮罩窗口的坐标维度
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
+   * @param pen 绘制使用的画笔
+   * @param name 名称
+   */
+  convertToRectDrawable(x: number, y: number, w: number, h: number, pen?: Pen, name?: string): RectDrawable
+  ConvertToRectDrawable(x: number, y: number, w: number, h: number, pen?: Pen, name?: string): RectDrawable
+
+  /**
+   * 在游戏捕获图像的坐标维度进行转换到遮罩窗口的坐标维度
+   * @param x X 坐标
+   * @param y Y 坐标
+   * @param w 宽度
+   * @param h 高度
+   * @param pen 绘制使用的画笔
+   * @param name 名称
+   */
+  convertToLineDrawable(x1: number, y1: number, x2: number, y2: number, pen?: Pen, name?: string): LineDrawable
+  ConvertToLineDrawable(x1: number, y1: number, x2: number, y2: number, pen?: Pen, name?: string): LineDrawable
+
+  /** 游戏窗口初始截图大于1080P的统一转换到1080P */
+  deriveTo1080P(): ImageRegion
+  DeriveTo1080P(): ImageRegion
+
+  /**
+   * 暂不知如何处理 Func 和 valueTuple 类型，但可以使用 DesktopRegion 静态方法代替
+   *
+   * 已经尝试过以下方法：
+   * GameRegionClick((size: Size, scale: number) => ([0.0, 0.0])) // 错误
+   * GameRegionClick((size: Size, scale: number) => ({ Item1: 0.0, Item2: 0.0 })) // 错误
+   * GameRegionClick((size: Size, scale: number) => ({ cx: 0.0, cy: 0.0 })) // 错误
+   */
+  // static void GameRegionClick(Func<Size, double, (double, double)> posFunc)
+  // static void GameRegionMove(Func<Size, double, (double, double)> posFunc)
+  // static void GameRegionMoveBy(Func<Size, double, (double, double)> deltaFunc)
+
+  /**
+   * 输入1080P下的坐标,方法会自动转换到当前游戏捕获区域大小下的坐标并点击
+   * @param x X 坐标
+   * @param y Y 坐标
+   */
+  static gameRegion1080PPosClick(x: number, y: number): void
+  static GameRegion1080PPosClick(x: number, y: number): void
+
+  /**
+   * 输入1080P下的坐标, 方法会自动转换到当前游戏捕获区域大小下的坐标
+   * @param x X 坐标
+   * @param y Y 坐标
+   */
+  static gameRegion1080PPosMove(x: number, y: number): void
+  static GameRegion1080PPosMove(x: number, y: number): void
 }

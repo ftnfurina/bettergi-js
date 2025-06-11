@@ -6,6 +6,7 @@ export default antfu({
     quotes: 'single',
   },
   typescript: true,
+  markdown: false,
   rules: {
     'no-console': 'error',
   },

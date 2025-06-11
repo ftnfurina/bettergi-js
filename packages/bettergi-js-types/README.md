@@ -46,17 +46,21 @@ const isOpen = settings.open // boolean
 
 ## 重要信息
 
-除开全局方法大小写敏感之外，其他任意 BetterGI 内置类型的属性和方法大小写不敏感。
+除开全局方法名、类名大小写敏感之外，其他任意 BetterGI 注入的类的属性名和方法名大小写不敏感。
 所以，此定义文件目前只提供了小驼峰 和 大驼峰(兼容适配，后续可能会逐步废弃) 两种命名风格的定义。
 
-例如:
-
-```typescript
+```javascript
 // 全局方法
 keyDown('W') // 正确
 KeyDown('W') // 错误
 KEYDOWN('W') // 错误
 keydown('W') // 错误
+
+// 类
+new soloTask('AutoDomain') // 错误
+new SoloTask('AutoDomain') // 正确
+new SOLOTASK('AutoDomain') // 错误
+new solotask('AutoDomain') // 错误
 
 // 方法
 genshin.moveMapTo(0, 0) // 正确 小驼峰
