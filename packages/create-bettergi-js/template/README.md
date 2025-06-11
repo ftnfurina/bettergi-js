@@ -33,8 +33,8 @@ npm run build
    export default defineConfig({
      // ...
      // outDir: 'dist',
-     // 记得添加你的脚本名 {YourPackageName} 以作区分，推荐使用英文
-     outDir: '.../BetterGI/User/JsScript/{YourPackageName}',
+     // 记得添加你的脚本名 {ScriptName} 以作区分，推荐使用英文
+     outDir: '.../BetterGI/User/JsScript/{ScriptName}',
    })
    ```
 3. 打开 BetterGI，在全自动 -> 调度器点击 "新增配置组" -> 在新的配置组中添加你的 JS 脚本。
@@ -48,14 +48,14 @@ npm run build
 >
 > ```typescript
 > // 读取 public/assets/data.txt 文件内容，注意不要添加 public 路径。
-> const data = file.readPathSync('assets/data.txt')
+> const data = file.readTextSync('assets/data.txt')
 > ```
 
 ```
 project
  ├── package.json
  ├── public             // 公共资源目录
- ├── ├── assets         // 静态资源存放目录（推荐存放图片、文本文件、采集路线 JSON 文件等）
+ │   ├── assets         // 静态资源存放目录（推荐存放图片、文本文件、采集路线 JSON 文件等）
  │   ├── manifest.json  // 脚本信息配置文件
  │   ├── README.md      // 脚本使用说明文件
  │   └── settings.json  // 脚本设置配置文件
