@@ -1,7 +1,7 @@
 {
   "name": "bettergi-js-types",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "BetterGI JS 脚本类型定义",
   "author": {
     "name": "ftnfurina",

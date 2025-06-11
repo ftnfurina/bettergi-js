@@ -1,5 +1,11 @@
 # bettergi-js-types
 
+## 0.3.1
+
+### Patch Changes
+
+- [`ed2fb84`](https://github.com/ftnfurina/bettergi-js/commit/ed2fb84426d52077298d78929e52fe10d584ca99) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Fix file callback error type
+
 ## 0.3.0
 
 ### Minor Changes
