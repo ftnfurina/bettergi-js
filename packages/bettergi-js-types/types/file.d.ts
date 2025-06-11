@@ -5,7 +5,7 @@ import type { Mat } from './rec'
  * @param error 错误信息，如果有的话
  * @param context 回调内容
  */
-type Callback<T> = (error?: any, context: T) => void
+type Callback<T> = (error?: string, context: T) => void
 
 // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Core/Script/Dependence/LimitedFile.cs
 export class File {

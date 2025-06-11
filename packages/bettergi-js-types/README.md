@@ -10,9 +10,9 @@ npm install --save-dev bettergi-js-types
 
 ## 类型推断
 
-方式一：在 tsconfig.json 中添加如下配置：推荐
+方式一：在 `tsconfig.json` 中添加如下配置：推荐
 
-```json5
+```json
 {
   "compilerOptions": {
     "types": ["bettergi-js-types"]
@@ -20,15 +20,15 @@ npm install --save-dev bettergi-js-types
 }
 ```
 
-方式二：在项目中添加一个全局声明文件 `bettergi-js.d.ts`，并添加如下内容
+方式二：在项目中添加一个全局声明文件 `bettergi-js.d.ts`，并添加如下内容：
 
 ```typescript
 /// <reference types="bettergi-js-types" />
 ```
 
-## settings 配置推断
+## 配置推断
 
-在项目中添加一个全局声明文件 `settings.d.ts`，并添加如下内容
+在项目中添加一个全局声明文件 `settings.d.ts`，并添加如下内容：
 
 ```typescript
 interface Settings {
@@ -40,8 +40,11 @@ interface Settings {
 使用时：
 
 ```typescript
-const name = settings.name // string
-const isOpen = settings.open // boolean
+(async () => {
+  // 类型自动推断
+  const name = settings.name // string
+  const isOpen = settings.open // boolean
+})()
 ```
 
 ## 重要信息
@@ -65,12 +68,12 @@ new solotask('AutoDomain') // 错误
 // 方法
 genshin.moveMapTo(0, 0) // 正确 小驼峰
 genshin.MoveMapTo(0, 0) // 正确 大驼峰
-genshin.MOVEMAPTO(0, 0) // 正确
-genshin.movemapto(0, 0) // 正确
+genshin.MOVEMAPTO(0, 0) // 正确 不推荐
+genshin.movemapto(0, 0) // 正确 不推荐
 
 // 属性
 genshin.screenDpiScale // 正确 小驼峰
 genshin.ScreenDpiScale // 正确 大驼峰
-genshin.SCREENDPISCALE // 正确
-genshin.screendpiscale // 正确
+genshin.SCREENDPISCALE // 正确 不推荐
+genshin.screendpiscale // 正确 不推荐
 ```
