@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.1.1
+
+### Patch Changes
+
+- [`f485a9f`](https://github.com/ftnfurina/bettergi-js/commit/f485a9fb986dee74307efe9fa14bc373947f3ae6) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Modify the template default package name
+
 ## 0.1.0
 
 ### Minor Changes
