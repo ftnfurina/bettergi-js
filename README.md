@@ -14,6 +14,29 @@ BetterGI JS 脚本辅助库，可以帮助你快速构建和调试 BetterGI JS �
 npm create bettergi-js
 ```
 
+## 📹 演示
+
+类型推断
+
+![类型推断](./images/types.gif)
+
+<details>
+  <summary>点击展开/收起更多演示</summary><br>
+
+配置变量
+
+![配置变量](./images/settings.gif)
+
+打包构建
+
+![打包构建](./images/build.gif)
+
+动态打包
+
+![动态打包](./images/build-watch.gif)
+
+</details>
+
 ## 📖 示例
 
 + [PrintTime](./examples/print-time/README.md) - 打印当前时间。
