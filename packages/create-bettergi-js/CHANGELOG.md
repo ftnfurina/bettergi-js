@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.1.3
+
+### Patch Changes
+
+- [`478a519`](https://github.com/ftnfurina/bettergi-js/commit/478a519f6437e644c2c23a950ecf882929baaf58) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Remove template assets folder
+
 ## 0.1.2
 
 ### Patch Changes
