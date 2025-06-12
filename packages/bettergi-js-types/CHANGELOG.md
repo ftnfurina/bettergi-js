@@ -1,5 +1,11 @@
 # bettergi-js-types
 
+## 0.3.2
+
+### Patch Changes
+
+- [`82a1f7f`](https://github.com/ftnfurina/bettergi-js/commit/82a1f7f5fc3ec1c62df8506c8fa6f95d53d36d19) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update Settings type
+
 ## 0.3.1
 
 ### Patch Changes
