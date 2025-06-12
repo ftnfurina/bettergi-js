@@ -15,7 +15,7 @@ import type { KeyMouseScript, PathingScript } from './script'
 declare global {
   // https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/Model/SettingItem.cs
   interface Settings {
-    readonly [key: string]: string | boolean
+    readonly [key: string]: any
   }
   const settings: Settings
 
