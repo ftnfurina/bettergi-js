@@ -9,11 +9,18 @@
           "description": "配置名"
         },
         "type": {
-          "type": "string",
-          "enum": [
-            "input-text",
-            "select",
-            "checkbox"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "input-text",
+                "select",
+                "checkbox"
+              ]
+            }
           ],
           "description": "配置类型"
         },
@@ -29,7 +36,7 @@
           "description": "可选值"
         },
         "default": {
-          "oneOf": [
+          "anyOf": [
             {
               "type": "string"
             },
