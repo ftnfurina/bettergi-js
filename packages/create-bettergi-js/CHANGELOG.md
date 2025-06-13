@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.2.1
+
+### Patch Changes
+
+- [`f247b97`](https://github.com/ftnfurina/bettergi-js/commit/f247b97d5fba0593b166ad73c48da3b3fecdddd3) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update template rollup config
+
 ## 0.2.0
 
 ### Minor Changes
