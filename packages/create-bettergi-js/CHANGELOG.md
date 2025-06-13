@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.2.2
+
+### Patch Changes
+
+- [`8c489fd`](https://github.com/ftnfurina/bettergi-js/commit/8c489fdd0a513d27ada047cf7364552645a4dac0) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update template tsconfig.json
+
 ## 0.2.1
 
 ### Patch Changes
