@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.2.0
+
+### Minor Changes
+
+- [`03bc409`](https://github.com/ftnfurina/bettergi-js/commit/03bc4093dfd2c868c356956cf026cba5245df985) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Replace tsup with rollup
+
 ## 0.1.4
 
 ### Patch Changes
