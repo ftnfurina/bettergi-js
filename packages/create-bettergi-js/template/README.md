@@ -23,15 +23,15 @@ npm run build
 > BetterGI JS 脚本目录获取方法：启动 BetterGI，在全自动 -> JS 脚本点击 "打开脚本目录" 按钮，打开的目录即为 BetterGI JS 脚本目录。
 
 1. 修改 [public/manifest.json](./public/manifest.json) 文件，更新你的脚本信息。
-2. 修改 [rollup.config.mjs](./rollup.config.mjs) 文件，修改 `output.dir` 选项为你的 BetterGI JS 脚本目录，如：
+2. 修改 [rollup.config.mjs](./rollup.config.mjs) 文件，把你的 BetterGI JS 脚本目录添加到 `outDirs` 中，如：
 
    ```typescript
-   export default defineConfig({
-     output: {
-       // 记得添加你的脚本名 {ScriptName} 以作区分，推荐使用英文
-       dir: '.../BetterGI/User/JsScript/{ScriptName}',
-     },
-   })
+   // const outDirs = ['dist']
+   const outDirs = [
+     'dist',
+     // 记得添加你的脚本名以作区分，推荐使用英文
+     '{BetterGI JS 脚本目录}/{ScriptName}'
+   ]
    ```
 3. 打开 BetterGI，在全自动 -> 调度器点击 "新增配置组" -> 在新的配置组中添加你的 JS 脚本。
 4. 运行命令 `npm run build:watch` 监听文件变化并实时自动打包。
