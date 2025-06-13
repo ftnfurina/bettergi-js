@@ -3,7 +3,7 @@
 ## 快速开始
 
 > [!Note]
-> 请确保你已经安装了 Node.js 环境，并正确配置了 npm 全局安装路径。
+> 请确保你已经安装了 Node.js 环境。
 
 ### 安装依赖
 
@@ -12,8 +12,6 @@ npm install
 ```
 
 ### 打包构建
-
-打包好后的脚本默认输出目录是 `dist`，你也可以修改 [tsup.config.ts](./tsup.config.ts) 文件修改输出目录 `outDir`。
 
 ```bash
 npm run build
@@ -25,16 +23,14 @@ npm run build
 > BetterGI JS 脚本目录获取方法：启动 BetterGI，在全自动 -> JS 脚本点击 "打开脚本目录" 按钮，打开的目录即为 BetterGI JS 脚本目录。
 
 1. 修改 [public/manifest.json](./public/manifest.json) 文件，更新你的脚本信息。
-2. 修改 [tsup.config.ts](./tsup.config.ts) 文件，修改 `outDir` 选项为你的 BetterGI JS 脚本目录，如：
+2. 修改 [rollup.config.mjs](./rollup.config.mjs) 文件，修改 `output.dir` 选项为你的 BetterGI JS 脚本目录，如：
 
    ```typescript
-   import { defineConfig } from 'tsup'
-
    export default defineConfig({
-     // ...
-     // outDir: 'dist',
-     // 记得添加你的脚本名 {ScriptName} 以作区分，推荐使用英文
-     outDir: '.../BetterGI/User/JsScript/{ScriptName}',
+     output: {
+       // 记得添加你的脚本名 {ScriptName} 以作区分，推荐使用英文
+       dir: '.../BetterGI/User/JsScript/{ScriptName}',
+     },
    })
    ```
 3. 打开 BetterGI，在全自动 -> 调度器点击 "新增配置组" -> 在新的配置组中添加你的 JS 脚本。
@@ -64,7 +60,7 @@ project
  ├── src                // 脚本源码目录
  │   └── index.ts       // 脚本入口文件
  ├── tsconfig.json
- ├── tsup.config.ts     // 打包配置
+ ├── rollup.config.mjs  // 打包配置
  └── .gitignore
 ```
 
