@@ -14,8 +14,8 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": [
-    "src",
-    "settings.d.ts"
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
