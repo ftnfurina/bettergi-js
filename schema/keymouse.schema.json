@@ -25,16 +25,20 @@
           "description": "BetterGI 版本号"
         },
         "x": {
-          "type": "number"
+          "type": "integer",
+          "description": "X 坐标"
         },
         "y": {
-          "type": "number"
+          "type": "integer",
+          "description": "Y 坐标"
         },
         "width": {
-          "type": "number"
+          "type": "integer",
+          "description": "宽度"
         },
         "height": {
-          "type": "number"
+          "type": "integer",
+          "description": "高度"
         },
         "record_dpi": {
           "type": "number",
