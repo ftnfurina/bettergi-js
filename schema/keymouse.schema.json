@@ -56,7 +56,7 @@
         "type": {
           "anyOf": [
             {
-              "type": "number",
+              "type": "integer",
               "enum": [
                 0,
                 1,
@@ -110,7 +110,9 @@
         },
         "cameraOrientation": {
           "type": "integer",
-          "description": "相机方向"
+          "description": "相机方向",
+          "maximum": 0,
+          "minimum": 360
         }
       },
       "required": [
