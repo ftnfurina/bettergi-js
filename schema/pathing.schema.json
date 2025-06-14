@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "position": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "ID"
+        },
+        "x": {
+          "type": "number",
+          "description": "X 坐标"
+        },
+        "y": {
+          "type": "number",
+          "description": "Y 坐标"
+        },
+        "point_ext_params": {},
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "path",
+                "target",
+                "teleport",
+                "orientation"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "位置类型"
+        },
+        "move_mode": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "walk",
+                "run",
+                "dash",
+                "climb",
+                "fly",
+                "jump",
+                "swim"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "移动模式"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "stop_flying",
+                "force_tp",
+                "nahida_collect",
+                "pick_around",
+                "fight",
+                "up_down_grab_leaf",
+                "hydro_collect",
+                "electro_collect",
+                "anemo_collect",
+                "pyro_collect",
+                "combat_script",
+                "mining",
+                "log_output",
+                "fishing",
+                "exit_and_relogin",
+                "set_time"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "动作名称"
+        },
+        "action_params": {
+          "type": "string",
+          "description": "动作参数"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "info": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "名称"
+        },
+        "description": {
+          "type": "string",
+          "description": "描述"
+        },
+        "author": {
+          "type": "string",
+          "description": "作者"
+        },
+        "version": {
+          "type": "string",
+          "description": "版本号"
+        },
+        "bgi_version": {
+          "type": "string",
+          "description": "BetterGI 版本号"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "collect",
+                "mining",
+                "farming"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "路径类型"
+        },
+        "map_name": {
+          "anyOf": [{
+            "type": "string",
+            "enum": [
+              "Teyvat",
+              "TheChasm",
+              "Enkanomiya",
+              "SeaOfBygoneEras",
+              "AncientSacredMountain"
+            ]
+          }, {
+            "type": "string"
+          }],
+          "description": "地图名称",
+          "default": "Teyvat"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/position"
+      },
+      "description": "路径点"
+    }
+  }
+}
