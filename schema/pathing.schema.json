@@ -1,6 +1,82 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "info": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "名称"
+        },
+        "description": {
+          "type": "string",
+          "description": "描述"
+        },
+        "author": {
+          "type": "string",
+          "description": "作者"
+        },
+        "version": {
+          "type": "string",
+          "description": "版本号"
+        },
+        "bgi_version": {
+          "type": "string",
+          "description": "BetterGI 版本号"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "collect",
+                "mining",
+                "farming"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "路径类型"
+        },
+        "map_name": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "Teyvat",
+                "TheChasm",
+                "Enkanomiya",
+                "SeaOfBygoneEras",
+                "AncientSacredMountain"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "地图名称",
+          "default": "Teyvat"
+        },
+        "last_modified_time": {
+          "type": "number",
+          "description": "最后修改时间"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "标签",
+          "default": []
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ]
+    },
     "misidentification": {
       "type": "object",
       "properties": {
@@ -49,7 +125,7 @@
       },
       "description": "异常识别处理"
     },
-    "point_ext_params": {
+    "pointExtParams": {
       "type": "object",
       "properties": {
         "misidentification": {
@@ -94,7 +170,7 @@
           "description": "Y 坐标"
         },
         "point_ext_params": {
-          "$ref": "#/definitions/point_ext_params"
+          "$ref": "#/definitions/pointExtParams"
         },
         "type": {
           "anyOf": [
@@ -180,87 +256,20 @@
   "type": "object",
   "properties": {
     "info": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "名称"
-        },
-        "description": {
-          "type": "string",
-          "description": "描述"
-        },
-        "author": {
-          "type": "string",
-          "description": "作者"
-        },
-        "version": {
-          "type": "string",
-          "description": "版本号"
-        },
-        "bgi_version": {
-          "type": "string",
-          "description": "BetterGI 版本号"
-        },
-        "type": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "collect",
-                "mining",
-                "farming"
-              ]
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "description": "路径类型"
-        },
-        "map_name": {
-          "anyOf": [
-            {
-              "type": "string",
-              "enum": [
-                "Teyvat",
-                "TheChasm",
-                "Enkanomiya",
-                "SeaOfBygoneEras",
-                "AncientSacredMountain"
-              ]
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "description": "地图名称",
-          "default": "Teyvat"
-        },
-        "last_modified_time": {
-          "type": "number",
-          "description": "最后修改时间"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "标签",
-          "default": []
-        }
-      },
-      "required": [
-        "name",
-        "type"
-      ]
+      "$ref": "#/definitions/info",
+      "description": "路径任务信息"
     },
     "positions": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/position"
       },
-      "description": "路径点"
+      "description": "路径点",
+      "default": []
     }
-  }
+  },
+  "required": [
+    "info",
+    "positions"
+  ]
 }
