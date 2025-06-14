@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "info": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "名称"
+        },
+        "description": {
+          "type": "string",
+          "description": "描述"
+        },
+        "author": {
+          "type": "string",
+          "description": "作者"
+        },
+        "version": {
+          "type": "string",
+          "description": "版本号"
+        },
+        "bgi_version": {
+          "type": "string",
+          "description": "BetterGI 版本号"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number"
+        },
+        "height": {
+          "type": "number"
+        },
+        "record_dpi": {
+          "type": "number",
+          "description": "录制时使用的 DPI",
+          "default": 1.0
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "x",
+        "y",
+        "width",
+        "height"
+      ]
+    },
+    "macroEvent": {
+      "properties": {
+        "type": {
+          "anyOf": [
+            {
+              "type": "number",
+              "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "description": "事件类型"
+        },
+        "keyCode": {
+          "type": "integer",
+          "description": "按键码"
+        },
+        "mouseX": {
+          "type": "integer",
+          "description": "鼠标 X 坐标"
+        },
+        "mouseY": {
+          "type": "integer",
+          "description": "鼠标 Y 坐标"
+        },
+        "mouseButton": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "Left",
+                "Right",
+                "Middle",
+                "None",
+                "XButton1",
+                "XButton2"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "鼠标按键"
+        },
+        "time": {
+          "type": "number",
+          "description": "事件发生时间"
+        },
+        "cameraOrientation": {
+          "type": "integer",
+          "description": "相机方向"
+        }
+      },
+      "required": [
+        "type",
+        "mouseX",
+        "mouseY",
+        "time"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "info": {
+      "$ref": "#/definitions/info",
+      "description": "键鼠脚本信息"
+    },
+    "macroEvents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/macroEvent"
+      },
+      "description": "键鼠脚本事件",
+      "default": []
+    }
+  },
+  "required": [
+    "info",
+    "macroEvents"
+  ]
+}
