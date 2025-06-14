@@ -110,9 +110,7 @@
         },
         "cameraOrientation": {
           "type": "integer",
-          "description": "相机方向",
-          "maximum": 0,
-          "minimum": 360
+          "description": "相机方向"
         }
       },
       "required": [
