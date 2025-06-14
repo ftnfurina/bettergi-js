@@ -1,13 +1,17 @@
 {
-  "name": "print-time",
+  "name": "use-func",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -cw"
   },
+  "dependencies": {
+    "bettergi-js-func": "workspace:^*"
+  },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "bettergi-js-types": "workspace:^*",
     "rollup": "^4.43.0",

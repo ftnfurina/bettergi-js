@@ -1,0 +1,29 @@
+# bettergi-js-func
+
+**BetterGI JS 脚本常用函数工具库。**
+
+## 安装依赖
+
+```bash
+npm install bettergi-js-func
+```
+
+## 使用方法
+
+```typescript
+import { mouseSmoothDrag } from 'bettergi-js-func'
+
+(async () => {
+  // 鼠标平滑拖动 (0, 870) 到 (1200, 170) 持续 3000ms
+  await mouseSmoothDrag(0, 870, 1200, 170, 3000)
+})()
+```
+
+## 支持函数
+
++ `mouseSmoothMove`：鼠标平滑移动
++ `mouseSmoothDrag`：鼠标平滑拖动
+
+## 使用示例
+
+[UseFunc](https://github.com/ftnfurina/bettergi-js/tree/main/examples/use-func) 使用函数示例。

@@ -1,0 +1,36 @@
+{
+  "name": "bettergi-js-func",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "BetterGI JS 脚本常用函数工具库。",
+  "author": {
+    "name": "ftnfurina",
+    "github": "https://github.com/ftnfurina"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ftnfurina/bettergi-js.git"
+  },
+  "keywords": [
+    "bettergi",
+    "javascript",
+    "func"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch"
+  },
+  "devDependencies": {
+    "bettergi-js-types": "workspace:^*",
+    "tsup": "^8.5.0"
+  }
+}
