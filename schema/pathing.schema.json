@@ -1,6 +1,83 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
+    "misidentification": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "pathTooFar",
+                  "unrecognized"
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "description": "何时处理",
+          "default": [
+            "unrecognized"
+          ]
+        },
+        "handling_mode": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "previousDetectedPoint",
+                "mapRecognition"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "处理方式",
+          "default": "previousDetectedPoint"
+        },
+        "arrival_time": {
+          "type": "number",
+          "description": "预估的时间",
+          "default": 0
+        }
+      },
+      "description": "异常识别处理"
+    },
+    "point_ext_params": {
+      "type": "object",
+      "properties": {
+        "misidentification": {
+          "$ref": "#/definitions/misidentification"
+        },
+        "description": {
+          "type": "string",
+          "description": "描述"
+        },
+        "monster_tag": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "normal",
+                "elite",
+                "legendary"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "怪物标识"
+        }
+      },
+      "description": "扩展参数"
+    },
     "position": {
       "type": "object",
       "properties": {
@@ -16,7 +93,9 @@
           "type": "number",
           "description": "Y 坐标"
         },
-        "point_ext_params": {},
+        "point_ext_params": {
+          "$ref": "#/definitions/point_ext_params"
+        },
         "type": {
           "anyOf": [
             {
@@ -86,6 +165,10 @@
         "action_params": {
           "type": "string",
           "description": "动作参数"
+        },
+        "locked": {
+          "type": "boolean",
+          "description": "是否锁定"
         }
       },
       "required": [
@@ -136,20 +219,35 @@
           "description": "路径类型"
         },
         "map_name": {
-          "anyOf": [{
-            "type": "string",
-            "enum": [
-              "Teyvat",
-              "TheChasm",
-              "Enkanomiya",
-              "SeaOfBygoneEras",
-              "AncientSacredMountain"
-            ]
-          }, {
-            "type": "string"
-          }],
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "Teyvat",
+                "TheChasm",
+                "Enkanomiya",
+                "SeaOfBygoneEras",
+                "AncientSacredMountain"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
           "description": "地图名称",
           "default": "Teyvat"
+        },
+        "last_modified_time": {
+          "type": "number",
+          "description": "最后修改时间"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "标签",
+          "default": []
         }
       },
       "required": [
