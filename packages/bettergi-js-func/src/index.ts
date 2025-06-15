@@ -1,3 +1,5 @@
+import type * as rec from 'bettergi-js-types/types/rec'
+
 /**
  * 平滑移动鼠标
  * @param sx 起始 X 坐标
@@ -51,7 +53,7 @@ export async function mouseSmoothDrag(sx: number, sy: number, ex: number, ey: nu
  * @param w 宽度
  * @param h 高度
  */
-export function autoZoomOcr(x: number, y: number, w: number, h: number) {
+export function autoZoomOcr(x: number, y: number, w: number, h: number): rec.RecognitionObject {
   const ratio = genshin.scaleTo1080PRatio
   return RecognitionObject.ocr(x * ratio, y * ratio, w * ratio, h * ratio)
 }
