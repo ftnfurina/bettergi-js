@@ -43,3 +43,15 @@ export async function mouseSmoothDrag(sx: number, sy: number, ex: number, ey: nu
   await sleep(250)
   leftButtonUp()
 }
+
+/**
+ * 自适应 16:9 缩放的 OCR 对象
+ * @param x X 坐标
+ * @param y Y 坐标
+ * @param w 宽度
+ * @param h 高度
+ */
+export function autoZoomOcr(x: number, y: number, w: number, h: number) {
+  const ratio = genshin.scaleTo1080PRatio
+  return RecognitionObject.ocr(x * ratio, y * ratio, w * ratio, h * ratio)
+}

@@ -23,6 +23,7 @@ import { mouseSmoothDrag } from 'bettergi-js-func'
 
 + `mouseSmoothMove`：鼠标平滑移动
 + `mouseSmoothDrag`：鼠标平滑拖动
++ `autoZoomOcr`：自适应缩放OCR对象
 
 ## 使用示例
 
