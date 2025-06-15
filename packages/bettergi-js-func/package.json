@@ -1,7 +1,7 @@
 {
   "name": "bettergi-js-func",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "BetterGI JS 脚本常用函数工具库。",
   "author": {
     "name": "ftnfurina",
