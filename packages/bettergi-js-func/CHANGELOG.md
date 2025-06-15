@@ -1,5 +1,11 @@
 # bettergi-js-func
 
+## 0.2.0
+
+### Minor Changes
+
+- [`5b85279`](https://github.com/ftnfurina/bettergi-js/commit/5b8527956be293cd915c5686b1da33f6c1fbb18d) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Add Timer
+
 ## 0.1.0
 
 ### Minor Changes
