@@ -1,5 +1,11 @@
 # create-bettergi-js
 
+## 0.2.3
+
+### Patch Changes
+
+- [`9df7380`](https://github.com/ftnfurina/bettergi-js/commit/9df7380ec0ac4d3ba36806d6d7076bd2bb15371d) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update template manifest.json
+
 ## 0.2.2
 
 ### Patch Changes
