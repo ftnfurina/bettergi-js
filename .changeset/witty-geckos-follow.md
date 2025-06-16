@@ -2,4 +2,4 @@
 "bettergi-js-func": minor
 ---
 
-Add playerCount and isInCoOpMode func
+Add playerCount and isCoOpMode func
