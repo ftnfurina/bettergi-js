@@ -27,6 +27,11 @@ import { mouseSmoothDrag } from 'bettergi-js-func'
 + `createTimer`：创建计时器
 + `isCoOpMode`：是否是多人游戏
 + `playerCount`：获取当前世界的玩家数量
++ `pathExistsSync`：同步判断路径是否存在
++ `readJSONFile`：异步读取JSON文件
++ `readJSONFileSync` ：同步读取JSON文件
++ `writeJSONFile`：异步写入JSON文件
++ `writeJSONFileSync`：同步写入JSON文件
 
 ## 使用示例
 
