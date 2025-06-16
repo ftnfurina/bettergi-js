@@ -24,6 +24,9 @@ import { mouseSmoothDrag } from 'bettergi-js-func'
 + `mouseSmoothMove`：鼠标平滑移动
 + `mouseSmoothDrag`：鼠标平滑拖动
 + `autoZoomOcr`：自适应缩放OCR对象
++ `createTimer`：创建计时器
++ `isCoOpMode`：是否是多人游戏
++ `playerCount`：获取当前世界的玩家数量
 
 ## 使用示例
 
