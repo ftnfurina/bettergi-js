@@ -1,5 +1,11 @@
 # bettergi-js-func
 
+## 0.3.0
+
+### Minor Changes
+
+- [`9e38ab0`](https://github.com/ftnfurina/bettergi-js/commit/9e38ab02d6d65c760b990855ba32cfab6886f19c) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Add playerCount and isCoOpMode func
+
 ## 0.2.1
 
 ### Patch Changes
