@@ -1,5 +1,11 @@
 # bettergi-js-types
 
+## 0.3.3
+
+### Patch Changes
+
+- [`b212eec`](https://github.com/ftnfurina/bettergi-js/commit/b212eece87179071463a1da4f638122fdf05ad7a) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update file readPathSync doc
+
 ## 0.3.2
 
 ### Patch Changes
