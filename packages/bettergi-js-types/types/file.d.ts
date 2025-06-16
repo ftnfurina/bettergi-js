@@ -11,6 +11,8 @@ type Callback<T> = (error?: string, context: T) => void
 export class File {
   /**
    * 读取指定文件夹内所有文件和文件夹的路径
+   *
+   * PS: 当文件夹不存在时，会创建文件夹，并返回空数组
    * @param folderPath 文件夹路径
    */
   readPathSync(folderPath: string): string[]
