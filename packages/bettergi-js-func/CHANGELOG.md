@@ -1,5 +1,11 @@
 # bettergi-js-func
 
+## 0.3.1
+
+### Patch Changes
+
+- [`4f0f70c`](https://github.com/ftnfurina/bettergi-js/commit/4f0f70c69cc491e89f99bddcad6b7caeeccd732b) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Update readme
+
 ## 0.3.0
 
 ### Minor Changes
