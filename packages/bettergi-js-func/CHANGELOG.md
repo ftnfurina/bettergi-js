@@ -1,5 +1,11 @@
 # bettergi-js-func
 
+## 0.4.0
+
+### Minor Changes
+
+- [`8bfcefe`](https://github.com/ftnfurina/bettergi-js/commit/8bfcefe8a4a9a5add7afe62857edd0155302f830) Thanks [@ftnfurina](https://github.com/ftnfurina)! - Add some methods for manipulating JSON files
+
 ## 0.3.1
 
 ### Patch Changes
